@@ -24,6 +24,10 @@ class MockClient extends Client
 {
     private array $databases = [];
 
+    public function __construct(string $uri = 'mongodb://localhost:27017', array $uriOptions = [], array $driverOptions = [])
+    {
+    }
+
     public function dropDatabase(string $databaseName, array $options = [])
     {
         if (isset($this->databases[$databaseName])) {
