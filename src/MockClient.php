@@ -28,7 +28,7 @@ class MockClient extends Client
     {
     }
 
-    public function dropDatabase(string $databaseName, array $options = [])
+    public function dropDatabase($databaseName, array $options = [])
     {
         if (isset($this->databases[$databaseName])) {
             unset($this->databases[$databaseName]);
@@ -56,12 +56,12 @@ class MockClient extends Client
         return new ArrayIterator($databases);
     }
 
-    public function selectCollection(string $databaseName, string $collectionName, array $options = [])
+    public function selectCollection($databaseName, $collectionName, array $options = [])
     {
         return $this->selectDatabase($databaseName)->selectCollection($collectionName, $options);
     }
 
-    public function selectDatabase(string $databaseName, array $options = []): Database
+    public function selectDatabase($databaseName, array $options = []): Database
     {
         if (!isset($this->databases[$databaseName])) {
             $this->databases[$databaseName] = new MockDatabase($databaseName);
