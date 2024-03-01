@@ -482,7 +482,12 @@ class MockCollection extends Collection
 
     public function replaceOne($filter, $replacement, array $options = [])
     {
-        // TODO: Implement this function
+        $document = $this->findOne($filter);
+        if ($document === null) {
+            return new MockUpdateResult(0, 0);
+        }
+
+        return $this->updateOne($filter, $replacement, $options);
     }
 
     public function withOptions(array $options = [])

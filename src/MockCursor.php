@@ -3,8 +3,9 @@
 namespace Helmich\MongoMock;
 
 use Iterator;
+use MongoDB\Driver\CursorInterface;
 
-class MockCursor implements Iterator
+class MockCursor implements CursorInterface, Iterator
 {
     private $store = [];
     private $position = 0;
@@ -42,5 +43,25 @@ class MockCursor implements Iterator
     public function valid()
     {
         return isset($this->store[$this->position]);
+    }
+
+    public function getId()
+    {
+        // TODO: Implement getId() method.
+    }
+
+    public function getServer()
+    {
+        // TODO: Implement getServer() method.
+    }
+
+    public function isDead()
+    {
+        // TODO: Implement isDead() method.
+    }
+
+    public function setTypeMap(array $typemap)
+    {
+        // TODO: Implement setTypeMap() method.
     }
 }
