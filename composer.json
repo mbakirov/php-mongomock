@@ -1,5 +1,5 @@
 {
-  "name": "helmich/mongomock",
+  "name": "mbakirov/mongomock",
   "description": "Library containing highly intelligent MongoDB mocks for unit testing",
   "type": "library",
   "license": "MIT",
@@ -7,6 +7,10 @@
     {
       "name": "Martin Helmich",
       "email": "kontakt@martin-helmich.de"
+    },
+    {
+      "name": "Marat Bakirov",
+      "email": "marat@deovr.com"
     }
   ],
   "require": {
